@@ -21,6 +21,8 @@
     <name>GitHub Maven Plugins</name>
     <description>GitHub Maven plugins</description>
     <url>https://github.com/github/letruongthinh.github.io</url>
+    
+    <properties><github.global.server>github</github.global.server></properties>
 
     <issueManagement>
         <url>https://github.com/github/letruongthinh.github.io/issues</url>
@@ -214,7 +216,4 @@
             <url>https://repo.eclipse.org/content/repositories/egit-releases/</url>
         </repository>
     </repositories>
-    <properties>
-           <github.global.server>github</github.global.server>
-    </properties>
 </project>
