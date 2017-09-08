@@ -214,4 +214,7 @@
             <url>https://repo.eclipse.org/content/repositories/egit-releases/</url>
         </repository>
     </repositories>
+    <properties>
+           <github.global.server>github</github.global.server>
+    </properties>
 </project>
