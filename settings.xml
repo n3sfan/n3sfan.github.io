@@ -1,0 +1,6 @@
+<servers>
+  <server>
+    <id>github</id>
+    <password>OAUTH2TOKEN</password>
+  </server>
+</servers>
