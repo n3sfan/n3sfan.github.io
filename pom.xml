@@ -20,10 +20,10 @@
 
     <name>GitHub Maven Plugins</name>
     <description>GitHub Maven plugins</description>
-    <url>https://github.com/github/maven-plugins</url>
+    <url>https://github.com/github/letruongthinh.github.io</url>
 
     <issueManagement>
-        <url>https://github.com/github/maven-plugins/issues</url>
+        <url>https://github.com/github/letruongthinh.github.io/issues</url>
         <system>GitHub</system>
     </issueManagement>
 
@@ -36,22 +36,17 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/github/maven-plugins</url>
-        <connection>scm:git:git://github.com/github/maven-plugins.git</connection>
-        <developerConnection>scm:git:git@github.com:github/maven-plugins.git</developerConnection>
+        <url>https://github.com/github/letruongthinh.github.io</url>
+        <connection>scm:git:git://github.com/github/letruongthinh.github.io.git</connection>
+        <developerConnection>scm:git:git@github.com:github/letruongthinh.github.io.git</developerConnection>
     </scm>
 
     <developers>
         <developer>
-            <email>kevin@github.com</email>
-            <name>Kevin Sawicki</name>
-            <url>https://github.com/kevinsawicki</url>
-            <id>kevinsawicki</id>
-        </developer>
-        <developer>
-            <email>clement.escoffier@[NO SPAM]gmail.com</email>
-            <name>Clement Escoffier</name>
-            <id>cescoffier</id>
+            <email>quangminhcantho43@gmail.com</email>
+            <name>Le Truong Thinh</name>
+            <url>https://github.com/letruongthinh</url>
+            <id>letruongthinh</id>
         </developer>
     </developers>
 
