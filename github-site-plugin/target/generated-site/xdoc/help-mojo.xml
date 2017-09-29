@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+  <properties>
+    <title>site:help</title>
+  </properties>
+  <body>
+    <section name="site:help">
+      <p><strong>Full name</strong>:</p>
+      <p>com.github.github:site-maven-plugin:0.13-SNAPSHOT:help</p>
+      <p><strong>Description</strong>:</p>
+      <div>Display help information on maven-plugin-plugin.<br />
+Call 
+<pre>
+ mvn plugin:help -Ddetail=true -Dgoal=&lt;goal-name&gt;
+</pre>
+
+to display parameter details.</div>
+      <p><strong>Attributes</strong>:</p>
+      <ul>
+        <li>The goal is thread-safe and supports parallel builds.</li>
+      </ul>
+      <subsection name="Optional Parameters">
+        <table border="0">
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Since</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><strong><a href="#detail">detail</a></strong></td>
+            <td><code>boolean</code></td>
+            <td><code>-</code></td>
+            <td>If <code>true</code>, display all settable properties for each
+goal.<br/><strong>Default value is</strong>: <code>false</code>.<br/><strong>User property is</strong>: <code>detail</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#goal">goal</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The name of the goal for which to show help. If unspecified, all
+goals will be displayed.<br/><strong>User property is</strong>: <code>goal</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#indentSize">indentSize</a></strong></td>
+            <td><code>int</code></td>
+            <td><code>-</code></td>
+            <td>The number of spaces per indentation level, should be positive.<br/><strong>Default value is</strong>: <code>2</code>.<br/><strong>User property is</strong>: <code>indentSize</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#lineLength">lineLength</a></strong></td>
+            <td><code>int</code></td>
+            <td><code>-</code></td>
+            <td>The maximum length of a display line, should be positive.<br/><strong>Default value is</strong>: <code>80</code>.<br/><strong>User property is</strong>: <code>lineLength</code>.</td>
+          </tr>
+        </table>
+      </subsection>
+      <subsection name="Parameter Details">
+        <p><strong><a name="detail">detail</a>:</strong></p>
+        <div>If <code>true</code>, display all settable properties for each
+goal.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>boolean</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>detail</code></li>
+          <li><strong>Default</strong>: <code>false</code></li>
+        </ul><hr/><p><strong><a name="goal">goal</a>:</strong></p>
+        <div>The name of the goal for which to show help. If unspecified, all
+goals will be displayed.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>goal</code></li>
+        </ul><hr/><p><strong><a name="indentSize">indentSize</a>:</strong></p>
+        <div>The number of spaces per indentation level, should be positive.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>int</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>indentSize</code></li>
+          <li><strong>Default</strong>: <code>2</code></li>
+        </ul><hr/><p><strong><a name="lineLength">lineLength</a>:</strong></p>
+        <div>The maximum length of a display line, should be positive.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>int</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>lineLength</code></li>
+          <li><strong>Default</strong>: <code>80</code></li>
+        </ul>
+      </subsection>
+    </section>
+  </body>
+</document>

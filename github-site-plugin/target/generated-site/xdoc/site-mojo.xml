@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+  <properties>
+    <title>site:site</title>
+  </properties>
+  <body>
+    <section name="site:site">
+      <p><strong>Full name</strong>:</p>
+      <p>com.github.github:site-maven-plugin:0.13-SNAPSHOT:site</p>
+      <p><strong>Description</strong>:</p>
+      <div>Mojo which copies files to a GitHub repository branch. This
+directly uses the GitHub data API to upload blobs, make commits,
+and update references and so a local Git repository is not used.</div>
+      <p><strong>Attributes</strong>:</p>
+      <ul>
+        <li>Requires a Maven project to be executed.</li>
+      </ul>
+      <subsection name="Required Parameters">
+        <table border="0">
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Since</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><strong><a href="#message">message</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The commit message used when committing the site.<br/></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#outputDirectory">outputDirectory</a></strong></td>
+            <td><code>File</code></td>
+            <td><code>-</code></td>
+            <td>The base directory to commit files from. <em>target/site</em> by
+default.<br/><strong>Default value is</strong>: <code>${project.reporting.outputDirectory}</code>.<br/><strong>User property is</strong>: <code>siteOutputDirectory</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#project">project</a></strong></td>
+            <td><code>MavenProject</code></td>
+            <td><code>-</code></td>
+            <td>The project being built<br/><strong>User property is</strong>: <code>project</code>.</td>
+          </tr>
+        </table>
+      </subsection>
+      <subsection name="Optional Parameters">
+        <table border="0">
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Since</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td><strong><a href="#branch">branch</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>Branch to update<br/><strong>Default value is</strong>: <code>refs/heads/gh-pages</code>.<br/></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#dryRun">dryRun</a></strong></td>
+            <td><code>boolean</code></td>
+            <td><code>-</code></td>
+            <td>Show what blob, trees, commits, and references would be
+created/updated but don't actually perform any operations on the
+target GitHub repository.<br/><strong>User property is</strong>: <code>github.site.dryRun</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#excludes">excludes</a></strong></td>
+            <td><code>String[]</code></td>
+            <td><code>-</code></td>
+            <td>Paths and patterns to exclude<br/></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#force">force</a></strong></td>
+            <td><code>boolean</code></td>
+            <td><code>-</code></td>
+            <td>Force reference update<br/><strong>User property is</strong>: <code>github.site.force</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#host">host</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The Host for API calls.<br/><strong>Default value is</strong>: <code>${github.global.host}</code>.<br/><strong>User property is</strong>: <code>github.site.host</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#includes">includes</a></strong></td>
+            <td><code>String[]</code></td>
+            <td><code>-</code></td>
+            <td>Paths and patterns to include<br/></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#merge">merge</a></strong></td>
+            <td><code>boolean</code></td>
+            <td><code>-</code></td>
+            <td>Set it to <code>true</code> to merge with existing the existing
+tree that is referenced by the commit that the ref currently points
+to<br/><strong>User property is</strong>: <code>github.site.merge</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#noJekyll">noJekyll</a></strong></td>
+            <td><code>boolean</code></td>
+            <td><code>-</code></td>
+            <td>Set it to <code>true</code> to always create a '.nojekyll' file at
+the root of the site if one doesn't already exist.<br/><strong>User property is</strong>: <code>github.site.noJekyll</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#oauth2Token">oauth2Token</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The oauth2 token for authentication<br/><strong>Default value is</strong>: <code>${github.global.oauth2Token}</code>.<br/><strong>User property is</strong>: <code>github.site.oauth2Token</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#password">password</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The password for authentication<br/><strong>Default value is</strong>: <code>${github.global.password}</code>.<br/><strong>User property is</strong>: <code>github.site.password</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#path">path</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>Path of tree<br/></td>
+          </tr>
+          <tr>
+            <td><strong><a href="#repositoryName">repositoryName</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The name of the repository. This setting must be set if the
+project's url and scm metadata are not set.<br/><strong>User property is</strong>: <code>github.site.repositoryName</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#repositoryOwner">repositoryOwner</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The owner of repository. This setting must be set if the project's
+url and scm metadata are not set.<br/><strong>User property is</strong>: <code>github.site.repositoryOwner</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#server">server</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The <em>id</em> of the server to use to retrieve the Github
+credentials. This id must identify a <em>server</em> from your
+<em>setting.xml</em> file.<br/><strong>Default value is</strong>: <code>${github.global.server}</code>.<br/><strong>User property is</strong>: <code>github.site.server</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#session">session</a></strong></td>
+            <td><code>MavenSession</code></td>
+            <td><code>-</code></td>
+            <td>The Maven session<br/><strong>User property is</strong>: <code>session</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#settings">settings</a></strong></td>
+            <td><code>Settings</code></td>
+            <td><code>-</code></td>
+            <td>The Maven settings<br/><strong>User property is</strong>: <code>settings</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#skip">skip</a></strong></td>
+            <td><code>boolean</code></td>
+            <td><code>0.9</code></td>
+            <td>Skip the site upload.<br/><strong>Default value is</strong>: <code>false</code>.<br/><strong>User property is</strong>: <code>github.site.skip</code>.</td>
+          </tr>
+          <tr>
+            <td><strong><a href="#userName">userName</a></strong></td>
+            <td><code>String</code></td>
+            <td><code>-</code></td>
+            <td>The user name for authentication<br/><strong>Default value is</strong>: <code>${github.global.userName}</code>.<br/><strong>User property is</strong>: <code>github.site.userName</code>.</td>
+          </tr>
+        </table>
+      </subsection>
+      <subsection name="Parameter Details">
+        <p><strong><a name="branch">branch</a>:</strong></p>
+        <div>Branch to update</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>Default</strong>: <code>refs/heads/gh-pages</code></li>
+        </ul><hr/><p><strong><a name="dryRun">dryRun</a>:</strong></p>
+        <div>Show what blob, trees, commits, and references would be
+created/updated but don't actually perform any operations on the
+target GitHub repository.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>boolean</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.dryRun</code></li>
+        </ul><hr/><p><strong><a name="excludes">excludes</a>:</strong></p>
+        <div>Paths and patterns to exclude</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String[]</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+        </ul><hr/><p><strong><a name="force">force</a>:</strong></p>
+        <div>Force reference update</div>
+        <ul>
+          <li><strong>Type</strong>: <code>boolean</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.force</code></li>
+        </ul><hr/><p><strong><a name="host">host</a>:</strong></p>
+        <div>The Host for API calls.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.host</code></li>
+          <li><strong>Default</strong>: <code>${github.global.host}</code></li>
+        </ul><hr/><p><strong><a name="includes">includes</a>:</strong></p>
+        <div>Paths and patterns to include</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String[]</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+        </ul><hr/><p><strong><a name="merge">merge</a>:</strong></p>
+        <div>Set it to <code>true</code> to merge with existing the existing
+tree that is referenced by the commit that the ref currently points
+to</div>
+        <ul>
+          <li><strong>Type</strong>: <code>boolean</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.merge</code></li>
+        </ul><hr/><p><strong><a name="message">message</a>:</strong></p>
+        <div>The commit message used when committing the site.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>Yes</code></li>
+        </ul><hr/><p><strong><a name="noJekyll">noJekyll</a>:</strong></p>
+        <div>Set it to <code>true</code> to always create a '.nojekyll' file at
+the root of the site if one doesn't already exist.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>boolean</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.noJekyll</code></li>
+        </ul><hr/><p><strong><a name="oauth2Token">oauth2Token</a>:</strong></p>
+        <div>The oauth2 token for authentication</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.oauth2Token</code></li>
+          <li><strong>Default</strong>: <code>${github.global.oauth2Token}</code></li>
+        </ul><hr/><p><strong><a name="outputDirectory">outputDirectory</a>:</strong></p>
+        <div>The base directory to commit files from. <em>target/site</em> by
+default.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.io.File</code></li>
+          <li><strong>Required</strong>: <code>Yes</code></li>
+          <li><strong>User Property</strong>: <code>siteOutputDirectory</code></li>
+          <li><strong>Default</strong>: <code>${project.reporting.outputDirectory}</code></li>
+        </ul><hr/><p><strong><a name="password">password</a>:</strong></p>
+        <div>The password for authentication</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.password</code></li>
+          <li><strong>Default</strong>: <code>${github.global.password}</code></li>
+        </ul><hr/><p><strong><a name="path">path</a>:</strong></p>
+        <div>Path of tree</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+        </ul><hr/><p><strong><a name="project">project</a>:</strong></p>
+        <div>The project being built</div>
+        <ul>
+          <li><strong>Type</strong>: <code>org.apache.maven.project.MavenProject</code></li>
+          <li><strong>Required</strong>: <code>Yes</code></li>
+          <li><strong>User Property</strong>: <code>project</code></li>
+        </ul><hr/><p><strong><a name="repositoryName">repositoryName</a>:</strong></p>
+        <div>The name of the repository. This setting must be set if the
+project's url and scm metadata are not set.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.repositoryName</code></li>
+        </ul><hr/><p><strong><a name="repositoryOwner">repositoryOwner</a>:</strong></p>
+        <div>The owner of repository. This setting must be set if the project's
+url and scm metadata are not set.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.repositoryOwner</code></li>
+        </ul><hr/><p><strong><a name="server">server</a>:</strong></p>
+        <div>The <em>id</em> of the server to use to retrieve the Github
+credentials. This id must identify a <em>server</em> from your
+<em>setting.xml</em> file.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.server</code></li>
+          <li><strong>Default</strong>: <code>${github.global.server}</code></li>
+        </ul><hr/><p><strong><a name="session">session</a>:</strong></p>
+        <div>The Maven session</div>
+        <ul>
+          <li><strong>Type</strong>: <code>org.apache.maven.execution.MavenSession</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>session</code></li>
+        </ul><hr/><p><strong><a name="settings">settings</a>:</strong></p>
+        <div>The Maven settings</div>
+        <ul>
+          <li><strong>Type</strong>: <code>org.apache.maven.settings.Settings</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>settings</code></li>
+        </ul><hr/><p><strong><a name="skip">skip</a>:</strong></p>
+        <div>Skip the site upload.</div>
+        <ul>
+          <li><strong>Type</strong>: <code>boolean</code></li>
+          <li><strong>Since</strong>: <code>0.9</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.skip</code></li>
+          <li><strong>Default</strong>: <code>false</code></li>
+        </ul><hr/><p><strong><a name="userName">userName</a>:</strong></p>
+        <div>The user name for authentication</div>
+        <ul>
+          <li><strong>Type</strong>: <code>java.lang.String</code></li>
+          <li><strong>Required</strong>: <code>No</code></li>
+          <li><strong>User Property</strong>: <code>github.site.userName</code></li>
+          <li><strong>Default</strong>: <code>${github.global.userName}</code></li>
+        </ul>
+      </subsection>
+    </section>
+  </body>
+</document>
